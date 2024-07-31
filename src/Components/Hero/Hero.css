@@ -1,0 +1,73 @@
+.desktop-hero-container {
+  display: flex;
+  gap: 70px;
+  align-items: center;
+  background-color: #495e57;
+  justify-content: center;
+}
+
+.hero-text {
+  width: 400px;
+}
+
+.food {
+  height: 350px;
+  width: 300px;
+  border-radius: 16px;
+}
+
+.title {
+  font-family: "Markazi Text", serif;
+  font-size: 64px;
+  font-weight: 500;
+  color: #f4ce14;
+}
+
+.sub-title {
+  font-family: "Markazi Text", serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: #edefee;
+  margin-top: -20px;
+}
+
+.description {
+  font-family: "Karla", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.reserve-btn {
+  background-color: #f4ce14;
+  color: #000000;
+  padding: 10px 16px;
+  border-radius: 16px;
+  border: none;
+  margin-top: 20px;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.mobile-hero-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 1200px) {
+  .mobile-hero-container .food {
+    height: 100px;
+    width: 100px;
+    border-radius: 8px;
+  }
+  .hero-wrapper {
+    display: flex;
+  }
+  .mobile-hero-container {
+    background-color: #495e57;
+    padding: 16px;
+    justify-content: center;
+  }
+}

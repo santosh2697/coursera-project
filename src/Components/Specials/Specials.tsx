@@ -1,4 +1,5 @@
 import React from "react";
+import "./Specials.css";
 
 const Specials = () => {
   return (
