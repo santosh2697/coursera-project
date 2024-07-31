@@ -1,11 +1,9 @@
 import React from "react";
-import Logo from "../../../public/assets/Logo.svg";
+// import Logo from "../../../public/assets/Logo.svg";
 const Header = () => {
   return (
     <header>
-      <figure>
-        <Logo />
-      </figure>
+      <figure>{/* <Logo /> */}</figure>
       <nav></nav>
     </header>
   );

@@ -1,8 +1,8 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./Components/HomePage/HomePage";
-import Reservation from "./Components/Reservation/Reservation";
-import Payment from "./Components/Payment/Payment";
+import HomePage from "./Components/HomePage/HomePage.tsx";
+import Reservation from "./Components/Reservation/Reservation.tsx";
+import Payment from "./Components/Payment/Payment.tsx";
 
 function App() {
   return (

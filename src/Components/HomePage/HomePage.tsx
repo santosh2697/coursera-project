@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "../Header/Header";
-import Specials from "../Specials/Specials";
-import Testimonials from "../Testimonials/Testimonials";
-import About from "../About/About";
-import Footer from "../Footer/Footer";
+import Header from "../Header/Header.tsx";
+import Specials from "../Specials/Specials.tsx";
+import Testimonials from "../Testimonials/Testimonials.tsx";
+import About from "../About/About.tsx";
+import Footer from "../Footer/Footer.tsx";
 
 const HomePage = () => {
   return (
