@@ -1,3 +1,39 @@
 .App {
   text-align: center;
 }
+
+.card-title-font-style {
+  font-weight: 700;
+  font-size: 18px;
+  font-family: "Karla", sans-serif;
+}
+
+.card-description-font-style {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Karla", sans-serif;
+}
+
+.subtitle-font-style {
+  font-family: "Markazi Text", serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.title-font-style {
+  font-family: "Markazi Text", serif;
+  font-size: 64px;
+  font-weight: 500;
+}
+
+.action-btn-font-style {
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.section-title-font-style {
+  font-weight: 800;
+  font-size: 20px;
+  font-family: "Karla", sans-serif;
+}
