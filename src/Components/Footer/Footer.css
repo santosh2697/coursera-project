@@ -1,0 +1,27 @@
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 450px;
+  flex: 1;
+  margin: 20px;
+}
+
+footer img {
+  height: 120px;
+  width: 70px;
+}
+
+.footer-text {
+  border-top: 2px solid black;
+}
+
+@media only screen and (max-width: 1179px) {
+  footer {
+    gap: 0;
+    justify-content: space-between;
+  }
+  footer img {
+    height: 80px;
+    width: 50px;
+  }
+}
