@@ -41,7 +41,7 @@ const Testimonials = () => {
       <div className="testimonials-wrapper">
         {testimonials?.map((data) => {
           return (
-            <article className="testimonials-container">
+            <article className="testimonials-container" key={data.name}>
               {stars.repeat(data.rating)}
               <div className="user-name-container">
                 <img src={data.image} alt="user" />

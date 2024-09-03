@@ -36,7 +36,7 @@ const Cards = ({ isMobile, isDesktop }) => {
       <>
         {specialsData.map((data) => {
           return (
-            <article className="special-card">
+            <article className="special-card" key={data.label}>
               <img
                 className="card-img"
                 src={`${data.image}`}
@@ -63,7 +63,7 @@ const Cards = ({ isMobile, isDesktop }) => {
       <>
         {specialsData.map((data) => {
           return (
-            <article className="mobile-special-card">
+            <article className="mobile-special-card" key={data.label}>
               <div className="mobile-card-container">
                 <div className="card-heading card-title-font-style">
                   {data.label}

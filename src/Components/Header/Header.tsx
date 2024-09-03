@@ -8,7 +8,13 @@ import "./Header.css";
 
 const Header = () => {
   const { isMobile, isDesktop } = useWindowDimensions();
-  const links = ["Home", "About", "Menu", "Reservations", "Order Online"];
+  const links = [
+    { label: "Home", route: "/" },
+    { label: "Menu", route: "/" },
+    { label: "About", route: "/" },
+    { label: "Reservations", route: "/booking" },
+    { label: "Order Online", route: "/booking" },
+  ];
   if (isDesktop) {
     return (
       <header className="desktop-header-container">
@@ -16,8 +22,10 @@ const Header = () => {
           <Logo />
         </figure>
         <nav className="nav-items">
-          {links?.map((link) => (
-            <Link to="/">{link}</Link>
+          {links?.map((link, index) => (
+            <Link key={index} to={link.route}>
+              {link.label}
+            </Link>
           ))}
         </nav>
         <figure>

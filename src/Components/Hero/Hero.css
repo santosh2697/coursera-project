@@ -66,3 +66,9 @@
     margin-inline: unset;
   }
 }
+
+@media only screen and (min-width: 1180px) {
+  .reserve-btn {
+    cursor: pointer;
+  }
+}

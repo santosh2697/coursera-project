@@ -2,10 +2,15 @@ import React from "react";
 import "./Hero.css";
 import Food from "../../assets/restauranfood.jpg";
 import useWindowDimensions from "../utils/useWindowDimensions.ts";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
-  const handleClick = () => {};
+  const navigateToUrl = useNavigate();
   const { isMobile, isDesktop } = useWindowDimensions();
+
+  const handleClick = () => {
+    navigateToUrl("/booking");
+  };
 
   if (isDesktop) {
     return (
