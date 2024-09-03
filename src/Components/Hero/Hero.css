@@ -47,7 +47,7 @@
   flex-direction: column;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1179px) {
   .mobile-hero-container .food {
     height: 100px;
     width: 100px;
@@ -60,5 +60,9 @@
     background-color: #495e57;
     padding: 16px;
     justify-content: center;
+  }
+  .hero-wrapper figure {
+    margin-block: unset;
+    margin-inline: unset;
   }
 }

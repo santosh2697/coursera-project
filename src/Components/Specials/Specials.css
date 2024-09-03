@@ -67,7 +67,7 @@
   border: none;
 }
 
-@media screen and (max-width: 1179px) {
+@media only screen and (max-width: 1179px) {
   .specials-heading {
     gap: 50px;
   }
@@ -83,10 +83,10 @@
     align-items: center;
   }
   .mobile-card-img {
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 16px;
   }
   .card-description {
     -webkit-line-clamp: 2;
