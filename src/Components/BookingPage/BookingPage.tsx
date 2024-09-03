@@ -63,7 +63,7 @@ export const reducer = (state, action) => {
       if (bookedDates !== null) {
         const bookedDatesJson = JSON.parse(bookedDates);
 
-        if (bookedDatesJson[action.val]) {
+        if (bookedDatesJson?.[action?.val]) {
           const bookedSlots = new Set(bookedDatesJson[action.val]);
 
           availableSlots = availableSlots.filter(
