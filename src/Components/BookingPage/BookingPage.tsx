@@ -12,7 +12,7 @@ export const seededRandom = function (seed) {
 };
 
 export const fetchAPI = function (date) {
-  let result = [];
+  let result: string[] = [];
   let random = seededRandom(date.getDate());
 
   for (let i = 17; i <= 23; i++) {
@@ -28,21 +28,22 @@ export const fetchAPI = function (date) {
 
 export const reducer = (state, action) => {
   //if any slots are booked in selected date
-  const bookedDates = localStorage.getItem("bookedDates");
   switch (action.type) {
     case "updateTimes":
       const copyArr = [...state];
       let filteredArr = copyArr.filter((val) => val !== action.val.time);
 
+      const bookedDates = localStorage.getItem("bookedDates");
+
       //There are no booked slots
-      if (bookedDates === null) {
+      if (!bookedDates || bookedDates === "null") {
         const data = { [action.val.date]: [action.val.time] };
         localStorage.setItem("bookedDates", JSON.stringify(data));
       } else {
         const bookedDatesJson = JSON.parse(bookedDates);
 
         //if selected date does not exist
-        if (!bookedDatesJson[action.val.date]) {
+        if (!bookedDatesJson?.[action.val.date]) {
           bookedDatesJson[action.val.date] = [action.val.time];
         } else {
           //Adding time to existing booked slots
@@ -60,8 +61,12 @@ export const reducer = (state, action) => {
       const date = new Date(action.val);
       let availableSlots = fetchAPI(date);
 
-      if (bookedDates !== null) {
-        const bookedDatesJson = JSON.parse(bookedDates);
+      const bookedDatesCopy = localStorage.getItem("bookedDates");
+
+      if (!bookedDatesCopy || bookedDatesCopy === "null") {
+        return availableSlots;
+      } else {
+        const bookedDatesJson = JSON.parse(bookedDatesCopy);
 
         if (bookedDatesJson?.[action?.val]) {
           const bookedSlots = new Set(bookedDatesJson[action.val]);
