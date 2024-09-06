@@ -2,3 +2,19 @@
   display: flex;
   flex-direction: column;
 }
+
+.reservation-heading {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.email-notification {
+  margin-top: 15px;
+}
+
+.tick-icon {
+  height: 40px;
+  width: 40px;
+}

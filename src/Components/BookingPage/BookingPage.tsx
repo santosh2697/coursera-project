@@ -91,8 +91,10 @@ const BookingPage = () => {
   return (
     <div className="booking-page-container">
       <Header />
-      BookingPage
-      <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
+      <div className="booking-page-wrapper">
+        <div className="subtitle-font-style">Table Reservation</div>
+        <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
+      </div>
     </div>
   );
 };

@@ -7,26 +7,25 @@ const testimonials = [
     image: UserIcon,
     name: "Bruce wayne",
     rating: 4,
-    review: "Overcrowded",
+    review: "Overcrowded and missing catwoman",
   },
   {
     image: UserIcon,
     name: "Joker",
     rating: 1,
-    review:
-      "Everything is peaceful and quite for my liking, needs some chaos in here to spice it up a lil",
+    review: "Everything is peaceful for my liking, needs some chaos in here",
   },
   {
     image: UserIcon,
     name: "Bane",
     rating: 3,
-    review: "Too many rich people from gotham vist the place",
+    review: "Too many corrupt rich people in Gotham. Gotham must be destroyed!",
   },
   {
     image: UserIcon,
     name: "Poison ivy",
     rating: 2,
-    review: "Lack of greenery around the restaurant, kinda bland",
+    review: "Lack of greenery around the restaurant",
   },
 ];
 

@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-const submitAPI = function (formData) {
-  return true;
-};
+import ExclamationIcon from "../../assets/exclamation-circle.svg";
 
 const BookingForm = ({
   availableTimes,
@@ -54,29 +51,25 @@ const BookingForm = ({
         noOfGuests: noOfGuests,
         occasion: occasion,
       };
-      const isFormSubmitted = submitAPI(formData);
 
-      if (isFormSubmitted) {
-        //call update dispatch
-        dispatch({ type: "updateTimes", val: formData });
+      //call update dispatch
+      dispatch({ type: "updateTimes", val: formData });
 
-        //For testing button submit
-        mockSubmit();
+      //For testing button submit
+      mockSubmit();
 
-        setTimeout(() => {
-          //Navigate to success page after 1s so that local storage updates
-          navigate("/confirmed", { state: formData });
-        }, 1000);
-      }
+      setTimeout(() => {
+        //Navigate to personal details page after 1s so that local storage updates
+        navigate("/about", { state: formData });
+      }, 1000);
     }
   };
 
   return (
-    <form
-      style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
-      onSubmit={handleSubmit}
-    >
-      <label htmlFor="res-date">Choose date</label>
+    <form onSubmit={handleSubmit} className="form-style">
+      <label htmlFor="res-date" className="action-btn-font-style">
+        Choose date
+      </label>
       <input
         type="date"
         id="res-date"
@@ -85,10 +78,22 @@ const BookingForm = ({
         onBlur={() => setIsDateTouched(true)}
         data-testid="select-date"
         aria-label="On Click"
+        className="input-box card-description-font-style"
       />
-      {isDateTouched && date.length === 0 && <div>Enter valid date</div>}
+      {isDateTouched && date.length === 0 && (
+        <div className="error-msg">
+          <img
+            src={ExclamationIcon}
+            alt="exclamation-circle"
+            className="info-icon"
+          />
+          <div>Enter valid date</div>
+        </div>
+      )}
 
-      <label htmlFor="res-time">Choose time</label>
+      <label htmlFor="res-time" className="action-btn-font-style">
+        Choose time
+      </label>
       <select
         id="res-time"
         onChange={(e) => setTime(e.target.value)}
@@ -96,6 +101,7 @@ const BookingForm = ({
         onBlur={() => setIsTimeTouched(true)}
         data-testid="select-time"
         aria-label="On Click"
+        className="input-box card-description-font-style"
       >
         <option value="select">Select Time</option>
         {availableTimes?.map((time, index) => (
@@ -104,9 +110,20 @@ const BookingForm = ({
           </option>
         ))}
       </select>
-      {isTimeTouched && time === "select" && <div>Enter valid time</div>}
+      {isTimeTouched && time === "select" && (
+        <div className="error-msg">
+          <img
+            src={ExclamationIcon}
+            alt="exclamation-circle"
+            className="info-icon"
+          />
+          <div>Enter valid time</div>
+        </div>
+      )}
 
-      <label htmlFor="guests">Number of guests</label>
+      <label htmlFor="guests" className="action-btn-font-style">
+        Number of guests
+      </label>
       <input
         type="number"
         placeholder="1"
@@ -118,12 +135,22 @@ const BookingForm = ({
         onBlur={() => setIsNoOfGuestsTouched(true)}
         data-testid="no-of-guests"
         aria-label="On Click"
+        className="input-box card-description-font-style"
       />
       {isNoOfGuestsTouched && noOfGuests < 1 && (
-        <div>Number of guest should be between 1 and 10</div>
+        <div className="error-msg">
+          <img
+            src={ExclamationIcon}
+            alt="exclamation-circle"
+            className="info-icon"
+          />
+          <div>Number of guest should be between 1 and 10</div>
+        </div>
       )}
 
-      <label htmlFor="occasion">Occasion</label>
+      <label htmlFor="occasion" className="action-btn-font-style">
+        Occasion
+      </label>
       <select
         id="occasion"
         onChange={(e) => setOccasion(e.target.value)}
@@ -131,13 +158,24 @@ const BookingForm = ({
         onBlur={() => setIsOccasionTouched(true)}
         data-testid="select-occasion"
         aria-label="On Click"
+        className="input-box card-description-font-style"
       >
         <option value="select">Select Occasion</option>
         <option value="Birthday">Birthday</option>
         <option value="Anniversary">Anniversary</option>
+        <option value="Date">Date</option>
+        <option value="Family-outing">Family outing</option>
+        <option value="Get-togther">Get togther</option>
       </select>
       {isOccasionTouched && occasion === "select" && (
-        <div>Enter valid occasion</div>
+        <div className="error-msg">
+          <img
+            src={ExclamationIcon}
+            alt="exclamation-circle"
+            className="info-icon"
+          />
+          <div>Enter valid occasion</div>
+        </div>
       )}
 
       <input
@@ -146,6 +184,7 @@ const BookingForm = ({
         data-testid="SubmitButton"
         disabled={submitDisabled}
         aria-label="On Click"
+        className="action-btn-font-style action-btn"
       />
     </form>
   );
